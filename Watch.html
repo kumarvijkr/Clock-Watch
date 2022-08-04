@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #second{
+            width: 2px;
+            height: 70px;
+            margin-top: 30px;
+            margin-left:100px;
+            background-color: white;
+            transform-origin: bottom;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+         #minute{
+            width: 2px;
+            height: 50px;
+            margin-top: 50px;
+            margin-left:100px;
+            background-color: rgb(218, 21, 103);
+            transform-origin: bottom;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px ;
+        }
+        #hour{
+            width: 2px;
+            height: 30px;
+            margin-top: 70px;
+            margin-left:100px;
+            background-color: rgb(4, 5, 5);
+            transform-origin: bottom;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+        #point{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-top: 93px;
+            margin-left:93px;
+            background-color: black;
+        }
+        .back{
+           border: 20px solid rgba(18, 213, 247, 0.603);
+            width: 200px;
+            height: 200px;
+            margin-top: 100px;
+            margin-left: 100px;
+            border-radius: 50%;
+            background-color: rgb(148, 217, 226);
+            box-shadow: 0 0 10px white;
+        }
+        #minute , #second , #hour,#point{
+            position: absolute;
+        }
+        .hour{
+            color: black;
+            position: absolute;
+        }
+        .h1{
+          margin-top: 12px;
+          margin-left: 146px;
+        }
+         .h2{
+          margin-top: 42px;
+          margin-left: 177px;
+        }
+       
+        .h3{
+          margin-top: 86px;
+          margin-left: 192px;
+          color: red;
+        }
+        
+        .h4{
+          margin-top: 130px;
+          margin-left: 180px;
+        }
+        
+        .h5{
+          margin-top: 168px;
+          margin-left: 151px;
+        }
+        
+        .h6{
+          margin-top: 185px;
+          margin-left: 100px;
+          color: red;
+        }
+       
+        .h7{
+          margin-top: 170px;
+          margin-left: 49px;
+        }
+        
+        .h8{
+          margin-top: 135px;
+          margin-left: 12px;
+        }
+        
+        .h9{
+          margin-top: 89px;
+          margin-left: 1px;
+          color: red;
+        }
+       
+        .h10{
+          margin-top: 45px;
+          margin-left: 13px;
+        }
+        
+        .h11{
+          margin-top: 12px;
+          margin-left: 43px;
+        }
+        
+        .h12{
+          margin-left: 92px;
+          color: red;
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="back">
+        <div id="point"></div>
+        <div class="HMS">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <div class="hour h1">1</div>
+        <div class="hour h2">2</div>
+        <div class="hour h3">3</div>
+        <div class="hour h4">4</div>
+        <div class="hour h5">5</div>
+        <div class="hour h6">6</div>
+        <div class="hour h7">7</div>
+        <div class="hour h8">8</div>
+        <div class="hour h9">9</div>
+        <div class="hour h10">10</div>
+        <div class="hour h11">11</div>
+        <div class="hour h12">12</div>
+        </div>
+    </div>
+ 
+    <script>
+        let seconds = document.getElementById("second");
+        let minutes = document.getElementById("minute");
+        let hours = document.getElementById("hour");
+        setInterval(()=>{
+            let time = new Date();
+        let sec = time.getSeconds();
+        let minute = time.getMinutes();
+        let hour = time.getHours();
+
+        let s = sec*6;
+        let m = minute*6;
+        let h = hour*30 + minute/2;
+
+        seconds.style.transform = `rotate(${s}deg)`;
+        minutes.style.transform = `rotate(${m}deg)`;
+        hours.style.transform = `rotate(${h}deg)`;
+        },1000)
+    </script>
+</body>
+</html>
